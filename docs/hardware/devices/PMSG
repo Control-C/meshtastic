@@ -1,0 +1,125 @@
+---
+id: pmsg
+title: PMSG
+sidebar_label: PMSG
+sidebar_position: 13
+---
+
+The **PMSG** (*Platfom Modular Smart Glasses*) or Poor Mens Smart Glasses is a compact, wearable development platform for real-time interaction, creative expression, and sensory feedback. It merges open hardware with embedded intelligence, designed for artists, educators, engineers, and experience designers.
+
+Originally developed by **Paul Stefaan Mooij**, the PMSG won the Seeed Studio AI Hackathon prize and continues to evolve as an open-source smart wearable system. Whether you're prototyping accessibility tools or building immersive installations, **PMSG** is your playful bridge between the physical and digital worlds.
+
+---
+
+## Specifications
+
+### MCU
+- **XIAO bassed footprint (USB-C model)**
+- LIKE ESP32-S3 core: Dual-core Xtensa LX7 @ 240MHz or XIAO ESP32S3 & Wio-SX1262 Kit
+- 2.4GHz Wi-Fi + Bluetooth 5.0 (BLE)
+- 8MB PSRAM + 8MB flash
+
+### Power & Charging
+- USB-C powered + data
+- **Supercapacitor or LiPo battery** support
+- Integrated **BQ25101** charging IC
+- Selectable charge current: 50mA / 100mA
+- Deep sleep: <5μA
+
+### Sensors & Inputs
+- 3-axis **accelerometer**
+- light / UV Sensor
+- Temperture and humiday 
+- Optional: IR, microphone, proximity sensors, Air Quality, Heart rate sensor
+
+
+### Outputs
+- **RGB LEDs**: WS2812C-2020-V1 (individually addressable)
+- **Vibration motor** (haptic feedback)
+- BLE-controlled animation modes: `RAINBOW`, `FLASH`, `SPARK`, etc.
+
+### Seeed Grove conector
+- Seeed Grove conector on 3v3 of I2C *( Oled, waveguide ect ) 
+- Seeed Grove conector on 3v3 of Uart * ( Camera )
+- Seeed Grove conector on 3v3 of GPIO * ( touch sensor ect )
+
+### Form Factor
+- Glasses-inspired PCB shape arm
+- [The Without Recycled sunglases](https://shop.without.live )
+- Double-sided SMD assembly
+- 4-layer PCB for optimal power distribution
+
+### Connectivity
+- BLE UART service
+- BLE command support:
+  - `BUZZ`
+  - `LED:ON`, `LED:OFF`
+  - `RAINBOW`, `SPARK`, etc.
+- SwiftUI iOS App integration
+- BLE filter for devices named `PMSG`, `PMSG_v`, or matching serial ID
+
+---
+
+## App Integration
+
+The meshtastic App
+- D10 is Vibration motor
+- D4 is button
+- SHT20 tempererature sensor
+
+The **SwiftUI BLE App** for iOS offers:
+- Real-time control of LEDs and vibration
+- BLE command buttons
+- Notification-to-action mapping (e.g., WhatsApp = `BUZZ`)
+- JSON-formatted sensor data streaming
+- Optional REST API hook to external AI engines
+
+---
+
+## Flashing Instructions
+
+To flash your **PMSG** device:
+
+### Recommended: Web Flasher (1200bps reset)
+1. Connect via USB-C.
+2. Use the "1200bps reset" feature in the Web Flasher.
+3. Select **ESP32-S3** board and flash the firmware.
+
+### Manual Method
+1. Power the device via USB-C or switch ON battery.
+2. Press and hold the **BOOT/USER button**.
+3. While holding, press the **RESET button**.
+4. Wait 2–3 seconds, then release BOOT/USER.
+5. Upload firmware using PlatformIO / Arduino IDE.
+
+Firmware:  
+`firmware-pmsg-X.X.X.bin` *(Coming soon)*
+
+---
+
+## Resources
+
+- **GitHub Repo**: _(Coming Soon)_
+- **Firmware Examples**: Arduino / PlatformIO
+- **Tutorials & Demos**: [YouTube Series Planned]
+
+---
+
+## Creative Use Cases
+
+- Smart notification glasses  
+- Immersive art installations  
+- Sensory substitution or accessibility tools  
+- Prototype for BLE/IoT edge AI  
+- Maker education kits
+
+---
+
+## Image Gallery
+
+![PMSG Front](./img/pmsg-front.jpg)  
+![PMSG Prototype](./img/pmsg-prototype.jpg)  
+![PMSG BLE App](./img/pmsg-ios-app.jpg)
+
+---
+
